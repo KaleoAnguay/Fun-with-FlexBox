@@ -1,17 +1,127 @@
 // Imports
-
+@import "partials/reset.scss";
+@import "partials/_general_styles.scss";
+@import "partials/clearfix.scss";
 
 
 // 1. Many small items in a grid
 
 
+.small-grid-flexbox{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  ul{
+    display: flex;
+    width: 400px;
+    height: 400px;
+    flex-flow: row wrap;
+    align-items: center;
+
+
+
+
+  }
+  li{
+    width: 38px;
+    height: 38px;
+    text-align: center;
+    line-height: 38px;
+  }
+  @media screen and (max-width: 899px){
+  ul{
+    margin: 0;
+    width: 100%;
+  }
+
+  li{
+      height: 30px;
+      width: 9%;
+  }
+  }
+}
+
 
 // 2. 2-Column Grid
+.block.two-col-grid.two-col-grid-flexbox{
+    display: flex;
+    flex-direction: row-reverse;
+  .column-1{
+    width: 50%;
+    height: 5%;
 
+  }
+  .column-2{
+    width: 50%;
+  }
 
+}
 
 // 3. Centering
+.block.centering-formula.centering-formula-1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-
+.block.centering-formula.centering-formula-2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 // 4. Ordering
+.block.ordering-block{
+  background-color: green;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+
+  .item.item-d{
+    width: 20%;
+
+  }
+
+  .item.item-c{
+    width: 10%;
+
+  }
+
+  .item.item-b{
+    width: 15%;
+  }
+
+  .item.item-a{
+    width: 35%;
+  }
+
+  @media screen and (max-width: 1200px) {
+    background-color: teal;
+    flex-direction: initial;
+  }
+
+  @media screen and (max-width: 900px) {
+    background-color: magenta;
+    flex-direction: column;
+
+  .item.item-c{
+    order: -2;
+    width: auto;
+
+  }
+
+  .item.item-b{
+    order: -1;
+    width: auto;
+  }
+
+  .item.item-a{
+    width: auto;
+  }
+
+  .item.item-d{
+    width: auto;
+  }
+  }
+}
